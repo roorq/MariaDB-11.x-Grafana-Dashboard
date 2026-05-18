@@ -1,0 +1,31 @@
+services:
+  mysqld-exporter:
+    image: prom/mysqld-exporter:v0.17.2
+    container_name: mysqld-exporter
+    restart: unless-stopped
+    command:
+      - "--config.my-cnf=/cfg/.my.cnf"
+      - "--mysqld.address=192.168.1.xxx:3306"
+      - "--collect.info_schema.tables"
+      - "--collect.info_schema.innodb_metrics"
+      - "--collect.info_schema.innodb_tablespaces"
+      - "--collect.info_schema.innodb_cmp"
+      - "--collect.info_schema.innodb_cmpmem"
+      - "--collect.info_schema.processlist"
+      - "--collect.info_schema.query_response_time"
+      - "--collect.global_status"
+      - "--collect.global_variables"
+      - "--collect.slave_status"
+      - "--collect.engine_innodb_status"
+      - "--collect.perf_schema.tablelocks"
+      - "--collect.perf_schema.eventswaits"
+      - "--collect.perf_schema.eventsstatements"
+      - "--collect.perf_schema.eventsstatements.limit=200"
+      - "--collect.perf_schema.file_events"
+      - "--collect.perf_schema.indexiowaits"
+      - "--collect.perf_schema.tableiowaits"
+      - "--web.listen-address=:9104"
+    volumes:
+      - /path/to/mysqld-exporter.cnf:/cfg/.my.cnf:ro
+    ports:
+      - "9104:9104"
