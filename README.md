@@ -144,6 +144,8 @@ performance-schema-consumer-statements-digest = ON
 ## License
 
 MIT — use it however you want. The original base came from a generic MySQL monitoring dashboard in the Grafana community catalog and was heavily modified for MariaDB.
+
+
 ![tekst alternatywny](ss_2026-05-18_13-05.png)
 
 ![tekst alternatywny](ss_2026-05-18_13-06.png)
@@ -151,8 +153,6 @@ MIT — use it however you want. The original base came from a generic MySQL mon
 ![tekst alternatywny](ss_2026-05-18_13-07.png)
 
 ![tekst alternatywny](ss_2026-05-18_13-08.png)
-
-![tekst alternatywny](ss_2026-05-18_13-09.png)
 
 ![tekst alternatywny](ss_2026-05-18_13-09.png)
 
